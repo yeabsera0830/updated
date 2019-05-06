@@ -1,6 +1,12 @@
 var express = require('express')
 var app = express()
 
+const fbPort = (process.env.PORT || 9090)
+const zeliaPort = (process.env.PORT || 9091)
+const mainPort = (process.env.PORT || 8081)
+
+module.exports = { fbPort, zeliaPort, mainPort }
+
 // Sign Up
 const signupPhone = require('./build/Sign-Up/signup_phone')
 const signupFacebook = require('./build/Sign-Up/signup_facebook')
@@ -30,7 +36,7 @@ const changeProfilePicture = require('./build/Settings/changeProfilePicture')
 var fb = express()
 var Facebook_Users = require('./__mocks__/Facebook-Users')
 
-fb.listen(9090, () => console.log("Facebook Server Running on *:9090"))
+fb.listen(fbPort, () => console.log("Facebook Server Running on *:" + fbPort))
 
 fb.use(express.json())
 
@@ -50,7 +56,7 @@ var zelia = express()
 
 zelia.use(express.json())
 
-zelia.listen(9091, () => console.log("Zelia Server Running on *:9091"))
+zelia.listen(zeliaPort, () => console.log("Zelia Server Running on *:" + fbPort))
 
 // Get Request Handler
 zelia.get('/zelia/login', (req, res) => {
@@ -95,7 +101,7 @@ zelia.delete('/zelia/data', (req, res) => {
 
 // The Main Server That Holds Both
 app.use(express.json())
-app.listen(8081, () => console.log("Main Server Running on *:8081"))
+app.listen(mainPort, () => console.log("Main Server Running on *:" + mainPort))
 
 // Sign up using phone
 app.post('/zelia/signup', async (req, res) => {
