@@ -129,7 +129,7 @@ app.post('/zelia/login/phone', async (req, res) => {
 app.post('/zelia/login/facebook', async (req, res) => {
     const token = req.body.token
     const response = await loginFacebook(token)
-    res.status(response).send(response)
+    res.status(response.status).send(response)
 })
 
 // Profiles Section

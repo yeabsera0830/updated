@@ -18,7 +18,7 @@ async function loginFacebook(token) {
                         }
                         else {
                             respond = {
-                                type: 'failure',
+                                type: 200,
                                 message: 'Could not find user'
                             }
                         }
