@@ -1,6 +1,6 @@
 module.exports = {
-    facebook: "http://localhost:9090/facebook/",
-    zeliaSignUp: "http://localhost:9091/zelia/signup",
-    zeliaLogin: "http://localhost:9091/zelia/login",
-    zeliaData: "http://localhost:9091/zelia/data"
+    facebook: "https://damp-badlands-46178.herokuapp.com:9090/facebook/",
+    zeliaSignUp: "https://damp-badlands-46178.herokuapp.com:9091/zelia/signup",
+    zeliaLogin: "https://damp-badlands-46178.herokuapp.com:9091/zelia/login",
+    zeliaData: "https://damp-badlands-46178.herokuapp.com:9091/zelia/data"
 }
