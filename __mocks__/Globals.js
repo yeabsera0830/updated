@@ -1,6 +1,6 @@
 module.exports = {
-    facebook: "https://damp-badlands-46178.herokuapp.com:9090/facebook/",
-    zeliaSignUp: "https://damp-badlands-46178.herokuapp.com:9091/zelia/signup",
-    zeliaLogin: "https://damp-badlands-46178.herokuapp.com:9091/zelia/login",
-    zeliaData: "https://damp-badlands-46178.herokuapp.com:9091/zelia/data"
+    facebook: "https://agile-taiga-13487.herokuapp.com:9090/facebook/",
+    zeliaSignUp: "https://agile-taiga-13487.herokuapp.com:9091/zelia/signup",
+    zeliaLogin: "https://agile-taiga-13487.herokuapp.com:9091/zelia/login",
+    zeliaData: "https://agile-taiga-13487.herokuapp.com:9091/zelia/data"
 }
