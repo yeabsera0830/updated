@@ -1,6 +1,6 @@
 module.exports = {
-    facebook: encodeURI("https://agile-taiga-13487.herokuapp.com:9090/facebook/"),
-    zeliaSignUp: encodeURI("https://agile-taiga-13487.herokuapp.com:9091/zelia/signup"),
-    zeliaLogin: encodeURI("https://agile-taiga-13487.herokuapp.com:9091/zelia/login"),
-    zeliaData: encodeURI("https://agile-taiga-13487.herokuapp.com:9091/zelia/data")
+    facebook: "https://agile-taiga-13487.herokuapp.com:" + (process.env.PORT || 9090) + "/facebook/",
+    zeliaSignUp: "https://agile-taiga-13487.herokuapp.com:" + (process.env.PORT || 9091) + "/zelia/signup",
+    zeliaLogin: "https://agile-taiga-13487.herokuapp.com:" + (process.env.PORT || 9091) + "/zelia/login",
+    zeliaData: "https://agile-taiga-13487.herokuapp.com:" + (process.env.PORT || 9091) +"/zelia/data"
 }
