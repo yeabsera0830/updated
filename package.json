@@ -4,7 +4,11 @@
   "description": "",
   "main": "facebook-signup.js",
   "scripts": {
+    "start": "node app.js",
     "test": "jest --env=node"
+  },
+  "engines": {
+    "node": "v10.15.3"
   },
   "keywords": [],
   "author": "",
