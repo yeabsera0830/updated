@@ -11,20 +11,20 @@ async function loginPhone(phone, password) {
                     if (user) {
                         if (bcrypt.compareSync(password, user.password)) {
                             return {
-                                type: 'success',
-                                zelia_token: user.zelia_token
+                                'status': 200,
+                                'token': user.zelia_token
                             }
                         }
                         else {
                             return {
-                                type: 'failure',
-                                message: 'Password is incorrect'
+                                'status': 400,
+                                'message': 'Password is incorrect'
                             }
                         }
                     } else {
                         return {
-                            type: 'failure',
-                            message: 'Counld not find user'
+                            'status': 400,
+                            'message': 'Could not find user'
                         }
                     }
                 })

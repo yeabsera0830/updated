@@ -50,15 +50,15 @@ async function signupFacebook(token) {
                         await axios.post(Connect.zeliaSignUp, { user: user })
                         .then(response =>  {
                             respond = {
-                                'type': 'success',
-                                'value': response.data.zelia_token
+                                'status': 200,
+                                'token': response.data.zelia_token
                             }
                         })
                     })
                     .catch(error => {
                         console.log(error)
                         respond =  {
-                            'type': 'failure',
+                            'status': 400,
                             'message': 'Invalid token'
                         }
                     })

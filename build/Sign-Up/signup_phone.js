@@ -24,7 +24,7 @@ async function signupPhone(phone, password) {
     const flag = await checkUser(phone)
     if (flag) {
         return {
-            'type': 'failure',
+            'status': 400,
             'message': 'User already exists'
         }
     }
@@ -46,13 +46,13 @@ async function signupPhone(phone, password) {
         await axios.post(Connect.zeliaSignUp, { user: user })
             .then(info => {
                 return {
-                    'type': 'success',
+                    'status': 200,
                     'value': info.data.zelia_token
                 }
             })
             .catch(err => {
                 return {
-                    'type': 'failure',
+                    'status': 400,
                     'message': 'could not sign up user'
                 }
             })

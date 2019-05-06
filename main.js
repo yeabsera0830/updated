@@ -107,14 +107,14 @@ app.post('/zelia/signup/phone', async (req, res) => {
     const phone = req.body.phoneNumber
     const password = req.body.password
     const response = await signupPhone(phone, password)
-    res.send(response)
+    res.status(response.status).send(response)
 })
 
 // Sign up using Facebook
 app.post('/zelia/signup/facebook', async (req, res) => {
     const token = req.body.token
     const response = await signupFacebook(token)
-    res.send(response)
+    res.status(response.status).send(response)
 })
 
 // Login using phone
@@ -122,14 +122,14 @@ app.post('/zelia/login/phone', async (req, res) => {
     const phone = req.body.phoneNumber
     const password = req.body.password
     const response = await loginPhone(phone, password)
-    res.send(response)
+    res.status(response.status).send(response)
 })
 
 // Login using Facebook
 app.post('/zelia/login/facebook', async (req, res) => {
     const token = req.body.token
     const response = await loginFacebook(token)
-    res.send(response)
+    res.status(response).send(response)
 })
 
 // Profiles Section

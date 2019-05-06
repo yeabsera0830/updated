@@ -3,7 +3,6 @@ var Connect = require('../../__mocks__/Globals')
 
 async function loginFacebook(token) {
     var respond = null
-    var token = 'oij98n98n98ncw98hcewc89nec8989w28bwiuecbweuc'
     await axios.get(Connect.facebook + token)
             .then(async info => {
                 const id = info.data.id
@@ -13,8 +12,8 @@ async function loginFacebook(token) {
                         const user = users.find(c => c.fbID === id)
                         if (user) {
                             respond = {
-                                'type': 'success',
-                                'value': user.zelia_token
+                                status: 200,
+                                'token': user.zelia_token
                             }
                         }
                         else {
@@ -27,7 +26,7 @@ async function loginFacebook(token) {
             })
             .catch(err => {
                 respond = {
-                    type: 'failure',
+                    status: 400,
                     message: 'Invalid Token'
                 }
             })
