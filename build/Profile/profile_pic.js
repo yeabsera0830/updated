@@ -8,6 +8,7 @@ async function profilePicture(token) {
                 const users = info.data
                 const user = users.find(c => c.zelia_token === token)
                 if (user) {
+                    console.log(user.profile_pic)
                     return {
                         type: 'success',
                         value: user.profile_picture

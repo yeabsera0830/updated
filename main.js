@@ -1,7 +1,7 @@
 var express = require('express')
 var app = express()
 
-const mainPort = 8081
+const mainPort = process.env.PORT || 8081
 const fbPort = mainPort
 const zeliaPort = mainPort
 
