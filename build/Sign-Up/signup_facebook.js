@@ -6,7 +6,6 @@ function rand() {
 }
 
 async function checkUser(token) {
-    console.log("The URL is: " + Connect.facebook + token)
     return (
         await axios.get(Connect.facebook + token)
         .then(async info => {
@@ -37,8 +36,7 @@ async function signupFacebook(token) {
     var respond = null
     await axios.get(Connect.facebook + token)
                     .then(async info => {
-                        await axios.post(Connect.zeliaSignUp, 
-                            {
+                        const user = {
                                 fbID: info.data.id,
                                 name: info.data.name,
                                 email: info.data.email,
@@ -48,8 +46,8 @@ async function signupFacebook(token) {
                                 password: null,
                                 reviews: [],
                                 friends: []
-                            }
-                        )
+                        }
+                        await axios.post(Connect.zeliaSignUp, { user: user })
                         .then(response =>  {
                             respond = {
                                 'type': 'success',
@@ -58,6 +56,7 @@ async function signupFacebook(token) {
                         })
                     })
                     .catch(error => {
+                        console.log(error)
                         respond =  {
                             'type': 'failure',
                             'message': 'Invalid token'

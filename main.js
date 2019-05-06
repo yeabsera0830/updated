@@ -66,9 +66,8 @@ app.get('/zelia/login', (req, res) => {
     res.send(Zelia_Users)
 })
 
-// Post Request Handler
 app.post('/zelia/signup', (req, res) => {
-    const user = req.body
+    const user = req.body.user
     Zelia_Users.push(user)
     res.send(user)
 })

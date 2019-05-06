@@ -43,7 +43,7 @@ async function signupPhone(phone, password) {
     }
 
     return ( 
-        await axios.post(Connect.zeliaSignUp, user)
+        await axios.post(Connect.zeliaSignUp, { user: user })
             .then(info => {
                 return {
                     'type': 'success',

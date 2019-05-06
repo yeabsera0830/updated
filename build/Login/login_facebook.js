@@ -3,6 +3,7 @@ var Connect = require('../../__mocks__/Globals')
 
 async function loginFacebook(token) {
     var respond = null
+    var token = 'oij98n98n98ncw98hcewc89nec8989w28bwiuecbweuc'
     await axios.get(Connect.facebook + token)
             .then(async info => {
                 const id = info.data.id
