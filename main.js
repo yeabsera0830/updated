@@ -104,7 +104,7 @@ app.delete('/zelia/data', (req, res) => {
 
 // Sign up using phone
 app.post('/zelia/signup/phone', async (req, res) => {
-    const phone = req.body.phone
+    const phone = req.body.phoneNumber
     const password = req.body.password
     const response = await signupPhone(phone, password)
     res.send(response)
@@ -119,7 +119,7 @@ app.post('/zelia/signup/facebook', async (req, res) => {
 
 // Login using phone
 app.post('/zelia/login/phone', async (req, res) => {
-    const phone = req.body.phone
+    const phone = req.body.phoneNumber
     const password = req.body.password
     const response = await loginPhone(phone, password)
     res.send(response)
