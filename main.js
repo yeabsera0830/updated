@@ -36,6 +36,11 @@ const changeProfilePicture = require('./build/Settings/changeProfilePicture')
 app.use(express.json())
 app.listen(mainPort, () => console.log("Main Server Running on *:" + mainPort))
 
+// For Testing Purposes
+app.get('/', (req, res) => {
+    res.send("This works")
+})
+
 
 // -============================================================
 // The Faked Facbook Server
