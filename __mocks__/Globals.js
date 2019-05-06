@@ -1,8 +1,9 @@
-const port = require('../app')
+const port = require('../main')
+
 
 module.exports = {
-    facebook: "localhost:" + port.fbPort + "/facebook/",
-    zeliaSignUp: "localhost:" + port.zeliaPort + "/zelia/signup",
-    zeliaLogin: "localhost:" + port.zeliaPort + "/zelia/login",
-    zeliaData: "localhost:" + port.zeliaPort +"/zelia/data"
+    facebook: "http://localhost:8081/facebook/",
+    zeliaSignUp: "http://localhost:8081/zelia/signup",
+    zeliaLogin: "http://localhost:8081/zelia/login",
+    zeliaData: "http://localhost:8081/zelia/data"
 }

@@ -6,6 +6,7 @@ function rand() {
 }
 
 async function checkUser(token) {
+    console.log("The URL is: " + Connect.facebook + token)
     return (
         await axios.get(Connect.facebook + token)
         .then(async info => {

@@ -4,7 +4,7 @@
   "description": "",
   "main": "facebook-signup.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "node main.js",
     "test": "jest --env=node"
   },
   "engines": {

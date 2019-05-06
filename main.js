@@ -1,7 +1,7 @@
 var express = require('express')
 var app = express()
 
-const mainPort = (process.env.PORT || 8081)
+const mainPort = 8081
 const fbPort = mainPort
 const zeliaPort = mainPort
 
@@ -99,7 +99,7 @@ app.delete('/zelia/data', (req, res) => {
 // -==========================================================
 
 // Sign up using phone
-app.post('/zelia/signup', async (req, res) => {
+app.post('/zelia/signup/phone', async (req, res) => {
     const phone = req.body.phone
     const password = req.body.password
     const response = await signupPhone(phone, password)

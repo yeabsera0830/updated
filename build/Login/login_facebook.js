@@ -6,7 +6,7 @@ async function loginFacebook(token) {
     await axios.get(Connect.facebook + token)
             .then(async info => {
                 const id = info.data.id
-                await axios.get('http://localhost:9091/zelia/login')
+                await axios.get(Connect.zeliaLogin)
                     .then(info => {
                         const users = info.data
                         const user = users.find(c => c.fbID === id)

@@ -6,7 +6,7 @@ function rand() {
 }
 
 it('"Passing" Test for Sign Up with Facebook', async () => {
-    const token = 'isdunbciusv89h9w8evnw98evn9w8nv9w8vvv3'
+    const token = 'oij98n98n98ncw98hcewc89nec8989w28bwiuecbweuc'
     await axios.get(Connect.facebook + token)
         .then(async info => {
             const user = {
@@ -20,8 +20,8 @@ it('"Passing" Test for Sign Up with Facebook', async () => {
                 friends: []
             }
             await axios.post(Connect.zeliaSignUp, user)
-            .then(info => {
-                expect(info.data).toEqual(user)
+            .then(response => {
+                expect(response.data).toEqual(user)
             })
             .catch(err => {
                 expect(err).toBeNull()
@@ -30,7 +30,7 @@ it('"Passing" Test for Sign Up with Facebook', async () => {
 });
 
 it('"Failing" Test for Sign Up with Facebook', async () => {
-    const token = 'isdunbciusv89h9w8evnw98evn9w8nv9w8vvv3'
+    const token = 'oij98n98n98ncw98hcewc89nec8989w28bwiuecbweuc'
     await axios.get(Connect.facebook + token)
         .then(async info => {
             const user = {
@@ -53,8 +53,8 @@ it('"Failing" Test for Sign Up with Facebook', async () => {
                 reviews: [],
                 friends: []
             })
-            .then(info => {
-                expect(info.data).not.toEqual(user)
+            .then(response => {
+                expect(response.data).not.toEqual(user)
             })
             .catch(err => {
                 expect(err).toBeNull()
